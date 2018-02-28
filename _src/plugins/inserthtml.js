@@ -264,13 +264,15 @@ UE.commands["inserthtml"] = {
       } catch (e) {}
     }
 
-    setTimeout(function() {
-      range = me.selection.getRange();
-      range.scrollToView(
-        me.autoHeightEnabled,
-        me.autoHeightEnabled ? domUtils.getXY(me.iframe).y : 0
-      );
-      me.fireEvent("afterinserthtml", html);
-    }, 200);
+    me.fireEvent("afterinserthtml", html);
+
+    // setTimeout(function() {
+    //   range = me.selection.getRange();
+    //   range.scrollToView(
+    //     me.autoHeightEnabled,
+    //     me.autoHeightEnabled ? domUtils.getXY(me.iframe).y : 0
+    //   );
+    //   me.fireEvent("afterinserthtml", html);
+    // }, 200);
   }
 };

@@ -448,6 +448,11 @@
           (options.initialStyle
             ? "<style>" + options.initialStyle + "</style>"
             : "") +
+          (options.iframeJsUrl
+            ? "<script type='text/javascript' src='" +
+                utils.unhtml(options.iframeJsUrl) +
+                "'></script>"
+            : "") +
           "</head>" +
           "<body class='view' ></body>" +
           "<script type='text/javascript' " +
@@ -458,11 +463,6 @@
           "'];editor._setup(document);},0);" +
           "var _tmpScript = document.getElementById('_initialScript');_tmpScript.parentNode.removeChild(_tmpScript);" +
           "</script>" +
-          (options.iframeJsUrl
-            ? "<script type='text/javascript' src='" +
-                utils.unhtml(options.iframeJsUrl) +
-                "'></script>"
-            : "") +
           "</html>";
 
         container.appendChild(
